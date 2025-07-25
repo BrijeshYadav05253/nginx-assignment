@@ -26,6 +26,7 @@ Set up 3 VMs with **Ubuntu 22.04 LTS**:
 
 ---
 
+
 ## Backend Web Servers (on VM1 using Podman containers)
 
 ### Web Server 1
