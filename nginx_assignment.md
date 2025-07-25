@@ -19,6 +19,8 @@ This assignment simulates a production-like High Availability (HA) environment u
 ---
 
 ## Node Details
+![Architecture Diagram](Screenshot from 2025-07-24 18-07-43.png)
+
 
 Set up 3 VMs with **Ubuntu 22.04 LTS**:
 
