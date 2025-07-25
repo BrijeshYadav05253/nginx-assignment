@@ -42,6 +42,7 @@ podman run -d --name node-a-nginx --network host \
 
 #### nginx.conf
 
+
 ```nginx
 events {}
 
@@ -55,6 +56,7 @@ http {
     }
 }
 ```
+![Architecture Diagram](2.png)
 
 ---
 
@@ -90,6 +92,7 @@ http {
 - Node A (192.168.122.240:8081): **Backend Server 1**
 - Node B (192.168.122.240:8082): **Backend Server 2**
 
+![Architecture Diagram](3.png)
 ---
 
 ## Load Balancer Nodes (LB Tier)
@@ -124,6 +127,8 @@ server {
     }
 }
 ```
+
+![Architecture Diagram](4.png)
 
 ### Remove Default Site and Reload NGINX
 
@@ -207,6 +212,9 @@ Repeat multiple times to verify round-robin output:
 - Backend Server 1
 - Backend Server 2
 
+![Architecture Diagram](7.png)
+![Architecture Diagram](8.png)
+
 ---
 
 ### 2. Simulate Failover
@@ -216,8 +224,11 @@ On **LB1**:
 ```bash
 sudo systemctl stop keepalived
 ```
+![Architecture Diagram](9.png)
 
 Check `ip a` on **LB2** to ensure VIP has been taken over.
+
+![Architecture Diagram](10.png)
 
 ---
 
@@ -231,6 +242,7 @@ sudo systemctl start keepalived
 
 VIP should fail back to **LB1** due to higher priority.
 
+![Architecture Diagram](11.png)
 ---
 
 ## Output Example
